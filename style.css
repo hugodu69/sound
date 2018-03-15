@@ -1,0 +1,65 @@
+/*le but est de permettre aux boutons de reduire en gardant leur ratio
+quand la fenetre est réduite ou agrandie*/
+
+/*deja il faut absolument mettre le doctype html sinon les differents navigateurs
+ne se comportent pas pareil*/
+
+/*pour commencer on permet a la largeur de se réduire en meme temps que
+la fenetre, grace aux pourcentages*/
+
+/*on met donc les boutons div dans une div container qui est en flex
+et en pourcentages pour les largeurs des boutons et les marges ce qui fait
+qu'au changement de taille cette div les largeurs diminuent aussi*/
+
+/*cette div elle-meme est placée en position absolute dans une autre div qui
+fait en pourcentage, la largeur de l'écran moins des marges en pourcentages
+ce qui fait que sa taille est relative a l'ecran, et sa hauteur varie
+proportionnellement grace au fait qu'elle soit définit en padding-top
+avec un pourcentage de la largeur de l'ecran, plutot qu'en height*/
+
+/*en effet le padding en pourcentage depend de la largeur de l'ecran, que ce
+soit le padding left et right ou le padding top et bottom, contrairement
+au height qui est définit par rapport a la hauteur de la fenetre*/
+
+/*malheureusement ce padding-top empeche de mettre quelque chose à l'intérieur
+à moins que ce soit en position absolute, c'est pour ça que la div container
+est en position absolute dedans avec un hauteur de 100% qui se réduit donc
+en gardant le ration de sa div parente en padding-top*/
+body {
+	position: relative;
+	margin: 0 15%;
+	padding-top: 30%;
+}
+#container {
+	position: absolute;
+	display: flex;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: 1px solid red;
+}
+#container div {
+	width: 12.5%;
+	margin: 10% 2%;
+	border-radius: 3px;
+	box-shadow: 0px 4px 4px rgb(100, 100, 100);
+	cursor: pointer;
+}
+#container div:nth-child(1) {
+	background-color: #FAF286;
+}
+#container div:nth-child(2) {
+	background-color: #FED97A;
+}
+#container div:nth-child(3) {
+	background-color: #F4999C;
+}
+#container div:nth-child(4) {
+	background-color: #C6A5CC;
+}
+#container div:nth-child(5) {
+	background-color: #A0C8E9;
+}
+#container div:nth-child(6) {
+	background-color: #A7D394;
+}

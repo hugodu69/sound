@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF8">
+    <meta name="viewport" content="width=device-width">
+    <title>drum</title>
+    <link href="./style.css" type="text/css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div id="container">
+      <div onclick="play('boom')">
+        <audio id="boom" src="ressources/boom.wav"></audio>
+      </div>
+      <div onclick="play('openhat')">
+        <audio id="openhat" src="ressources/openhat.wav"></audio>
+      </div>
+      <div onclick="play('snare')">
+        <audio id="snare" src="ressources/snare.wav"></audio>
+      </div>
+      <div onclick="play('tink')">
+        <audio id="tink" src="ressources/tink.wav"></audio>
+      </div>
+      <div onclick="play('clap')">
+        <audio id="clap" src="ressources/clap.wav"></audio>
+      </div>
+      <div onclick="play('hihat')">
+        <audio id="hihat" src="ressources/hihat.wav"></audio>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function play(sound) {
+      var music = document.getElementById(sound);
+      music.play();
+    }
+  </script>
+</html>
